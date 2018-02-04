@@ -20,3 +20,13 @@
 
 #include <stdio.h>
 #include <jpeglib.h>
+
+#undef jpeg_create_compress
+void jpeg_create_compress(j_compress_ptr info) {
+    jpeg_CreateCompress(info, JPEG_LIB_VERSION, (size_t) sizeof(struct jpeg_compress_struct));
+}
+
+#undef jpeg_create_decompress
+void jpeg_create_decompress(j_decompress_ptr info) {
+    jpeg_CreateDecompress(info, JPEG_LIB_VERSION, (size_t) sizeof(struct jpeg_decompress_struct));
+}
