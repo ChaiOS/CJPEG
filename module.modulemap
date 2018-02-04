@@ -1,0 +1,4 @@
+module CJPEG [system] {
+  header "module.h"
+  export *
+}
