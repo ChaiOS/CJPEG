@@ -4,7 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "CJPEG",
-    pkgConfig: "jpeg",
+    pkgConfig: "libjpeg",
     providers: [
         .apt(["libjpeg-dev"]),
         .brew(["jpeg"])
