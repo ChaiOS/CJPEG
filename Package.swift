@@ -1,18 +1,20 @@
-// swift-tools-version:4.0
+// swift-tools-version:4.2
 
 import PackageDescription
 
 let package = Package(
     name: "CJPEG",
-    pkgConfig: "libjpeg",
-    providers: [
-        .apt(["libjpeg-dev"]),
-        .brew(["jpeg"])
-    ],
     products: [
         .library(name: "CJPEG", targets: ["CJPEG"])
     ],
     targets: [
-        .target(name: "CJPEG")
+        .systemLibrary(
+            name: "CJPEG",
+            pkgConfig: "libjpeg",
+            providers: [
+                .apt(["libjpeg-dev"]),
+                .brew(["jpeg"])
+            ]
+        )
     ]
 )
